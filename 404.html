@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="./site-assets/css/tag.css" />
         <link rel="stylesheet" href="./site-assets/css/links.css" />
         <!-- JS -->
-        <script src="/site-assets/js/languageChange.js"></script>
+        <script src="./site-assets/js/languageChange.js"></script>
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <!-- code font for google-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -269,7 +269,7 @@
             if(obj !== ""){ //クッキーにデータがあるか
                 let jsonLang = obj.lang;
                 if(jsonLang = ""){
-                    glot.import("../site-assets/json/glot-data.json").then(() => {
+                    glot.import("./site-assets/json/glot-data.json").then(() => {
                         glot.render();
                     });
                     let rootElement = document.documentElement;
@@ -279,7 +279,7 @@
                     glot.render(jsonLang);
                 }
             }else{
-                glot.import("../site-assets/json/glot-data.json").then(() => {
+                glot.import("./site-assets/json/glot-data.json").then(() => {
                     glot.render();
                 });
                 let rootElement = document.documentElement;
@@ -295,7 +295,7 @@
             // クッキーを読み出す
             const obj = convertCookieToObject(document.cookie);
             let jsonLang = obj.lang;
-            glot.import("../site-assets/json/glot-data.json").then(() => {
+            glot.import("./site-assets/json/glot-data.json").then(() => {
                 glot.render(jsonLang);
                 setLangTextForm()
             });
