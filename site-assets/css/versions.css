@@ -1,0 +1,213 @@
+:root {
+    --background-1: #1b1b1b;
+    --background-2: #252525;
+    --background-3: #222222;
+    --background-4: #3d3d3d;
+    --background-5: #383838;
+    --background-6: #575757;
+    --text-1: #ffffff;
+    --text-2: #dcdcdc;
+    --text-3: #c3c3c3;
+    --accent-primary: #50baf9;
+    --accent-success: #3eb84f;
+    --accent-warning: #b8893e;
+    --accent-danger: #cf4945;
+    --accent-donate: #db61a2;
+    --accent-site-1: #307328;
+    --accent-site-2: #296422;
+    --accent-sounds-1: #451475;
+    --accent-sounds-2: #39155e;
+    --accent-sounds-3: #6a08a3;
+    --accent-sounds-4: #d1a5e6;
+    --nav: #91908f;
+    --nav-hover: #b4b3b0;
+    --nav-faded: #4d4c4c;
+    --nav-faded-hover: #6e6e6e;
+    --selection: #445a9599;
+    --errors-background: #62190f;
+    --errors-background-2: #471610;
+    --errors-background-3: #3f140f;
+    --errors-text: #ffffffcc;
+    --invalid-text: #fd7951;
+    --success-background-3: #143f0f;
+    --water-background-3: #0d3266;
+    --lava-background-3: #662e0d;
+    --text-saturation: 60%;
+    --text-lightness: 45%;
+    --editor-variable: #9CDCFE;
+    --editor-string: #CE9178;
+    --editor-constant: #569CD6;
+    --editor-number: #B5CEA8;
+    --diff-added: #3fb950;
+    --diff-modified: #d29922;
+    --diff-removed: #f85149;
+    --diff-renamed: #7d8590;
+    --diff-line-added: rgba(46, 160, 67, .15);
+    --diff-line-removed: rgba(248, 81, 73, .1);
+    --diff-line-separation: rgba(56, 139, 253, .1);
+    --diff-numbers-added: rgba(63, 185, 80, .3);
+    --diff-numbers-removed: rgba(248, 81, 73, .3);
+    --diff-numbers-separation: rgba(56, 139, 253, .4)
+}
+
+
+.note {
+    color: var(--text-3);
+}
+
+
+
+.navigation {
+    display: flex;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.legacy-container {
+    padding: 16px;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.version-list {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.version-entry {
+    overflow: scroll;
+    max-height: 90px;
+    display: grid;
+    grid-template-columns: .8fr 1.2fr 1fr .8fr;
+    gap: 8px;
+    background: var(--background-2);
+    border-radius: 4px;
+    margin-bottom: 8px;
+    padding: 8px;
+    text-decoration: none;
+}
+.version-entry:hover {
+    background: var(--background-3);
+}
+
+.version-entry>.version-id {
+    color: var(--text-1);
+    font-size: 1.1rem;
+}
+
+.version-entry>.version-metadata {
+    font-size: 1rem;
+    align-self: center;
+}
+
+.version-metadata {
+    color: var(--text-3);
+    font-size: 1.2rem;
+}
+
+.version-metadata-value {
+    color: var(--text-1);
+}
+
+
+
+
+
+
+
+
+
+
+.navigation>*:not(:last-child) {
+    margin-right: 8px;
+}
+
+.btn-link {
+    text-decoration: none;
+    display: inline-flex;
+}
+
+.btn span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    border: none;
+    height: 32px;
+    border-radius: 6px;
+    padding: 7px 11px;
+    cursor: pointer;
+    outline: none;
+    font-size: 1rem;
+    white-space: nowrap;
+    background-color: var(--background-4);
+    box-shadow: 0 1px 7px -2px #000;
+    color: var(--text-2);
+    fill: var(--text-2);
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.btn i:not(:last-child) {
+    margin-right: 5px;
+}
+
+
+
+
+.query-search {
+    flex-basis: 100%;
+    background-color: var(--background-2);
+}
+
+.btn-input {
+    cursor: initial;
+    padding-right: 7px;
+}
+.btn {
+    display: flex;
+    align-items: center;
+    border: none;
+    height: 32px;
+    border-radius: 6px;
+    padding: 7px 11px;
+    cursor: pointer;
+    outline: none;
+    font-size: 1rem;
+    white-space: nowrap;
+    background-color: var(--background-4);
+    box-shadow: 0 1px 7px -2px #000;
+    color: var(--text-2);
+    fill: var(--text-2);
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+button, input, optgroup, select, textarea {
+    font-family: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    font-size: 100%;
+    font-weight: inherit;
+    line-height: inherit;
+    color: inherit;
+    margin: 0;
+    padding: 0;
+}

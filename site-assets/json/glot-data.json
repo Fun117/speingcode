@@ -1,0 +1,225 @@
+{
+    "lang":{
+        "ar":"アラビア語",
+        "zh":"中国語",
+        "en":"英語",
+        "id":"インドネシア語",
+        "ja":"日本語",
+        "ms":"マレー語",
+        "es":"スペイン語"
+    },
+    "Data+does+not+exist.":{
+        "ar":"Data does not exist.",
+        "zh":"数据不存在。",
+        "en":"Data does not exist.",
+        "id":"Datanya tidak ada.",
+        "ja":"データが存在しません。",
+        "ms":"Data tidak wujud.",
+        "es":"Los datos no existen."
+    },
+
+
+    "MDN+Web+Docs":{
+        "ar":"MDN Web Docs",
+        "zh":"MDN 网络文档",
+        "en":"MDN Web Docs",
+        "id":"Dokumentasi Web MDN",
+        "ja":"MDN ウェブ ドキュメント",
+        "ms":"Dokumentasi Web MDN",
+        "es":"Documentación web de MDN"
+    },
+
+
+
+
+    "Popular+Tools":{
+        "ar":"Popular Tools",
+        "zh":"流行工具",
+        "en":"Popular Tools",
+        "id":"Alat populer",
+        "ja":"人気のツール",
+        "ms":"Alat popular",
+        "es":"herramienta popular"
+    },
+    "changelog":{
+        "ar":"changelog",
+        "zh":"变更日志",
+        "en":"changelog",
+        "id":"mengubah log",
+        "ja":"更新履歴",
+        "ms":"tukar log",
+        "es":"Registro de cambios"
+    },
+    "Versions":{
+        "ar":"Versions",
+        "zh":"版本",
+        "en":"Versions",
+        "id":"Versi",
+        "ja":"バージョン",
+        "ms":"Versi",
+        "es":"Versiones"
+    },
+    "Under+development":{
+        "ar":"Under development",
+        "zh":"正在开发中",
+        "en":"Under development",
+        "id":"Dalam pengembangan",
+        "ja":"開発中の",
+        "ms":"Di bawah pembangunan",
+        "es":"Desarrollando"
+    },
+    "What's+new":{
+        "ar":"What's new",
+        "zh":"什么是新的",
+        "en":"What's new",
+        "id":"Apa yang baru",
+        "ja":"新着情報",
+        "ms":"Apa yang baru",
+        "es":"Qué hay de nuevo"
+    },
+    "Guides":{
+        "ar":"Guides",
+        "zh":"指导",
+        "en":"Guides",
+        "id":"Memandu",
+        "ja":"ガイド",
+        "ms":"Panduan",
+        "es":"Guías"
+    },
+    "Tools":{
+        "ar":"Tools",
+        "zh":"工具",
+        "en":"Tools",
+        "id":"Alat",
+        "ja":"ツール",
+        "ms":"Alatan",
+        "es":"Herramientas"
+    },
+
+
+
+    "# Tags":{},
+    "breaking":{
+        "ar":"breaking",
+        "zh":"爆炸新闻",
+        "en":"breaking",
+        "id":"berita terbaru",
+        "ja":"速報",
+        "ms":"berita tergempar",
+        "es":"noticias de última hora"
+    },
+    "update":{
+        "ar":"update",
+        "zh":"更新",
+        "en":"update",
+        "id":"Memperbarui",
+        "ja":"アップデート",
+        "ms":"kemas kini",
+        "es":"actualizar"
+    },
+    "pack":{
+        "ar":"pack",
+        "zh":"盒",
+        "en":"pack",
+        "id":"mengemas",
+        "ja":"パック",
+        "ms":"pek",
+        "es":"embalar"
+    },
+    "page":{
+        "ar":"page",
+        "zh":"页",
+        "en":"page",
+        "id":"halaman",
+        "ja":"ページ",
+        "ms":"muka surat",
+        "es":"página"
+    },
+    "development":{
+        "ar":"development",
+        "zh":"发展",
+        "en":"development",
+        "id":"perkembangan",
+        "ja":"開発",
+        "ms":"pembangunan",
+        "es":"desarrollo"
+    },
+
+
+
+
+    "# changelog":{},
+    "Publish+your+page.":{
+        "ar":"Publish your page.",
+        "zh":"发布您的页面。",
+        "en":"Publish your page.",
+        "id":"Publikasikan halaman Anda.",
+        "ja":"ページを公開します。",
+        "ms":"Terbitkan halaman anda.",
+        "es":"Publica tu página."
+    },
+
+
+
+
+
+    "# Versions":{},
+    "Latest+snapshot":{
+        "ar":"Latest snapshot",
+        "zh":"最新快照",
+        "en":"Latest snapshot",
+        "id":"Cuplikan terbaru",
+        "ja":"最新のスナップショット",
+        "ms":"Gambar terkini",
+        "es":"última instantánea"
+    },
+    "Latest+release":{
+        "ar":"Latest release",
+        "zh":"最新版本",
+        "en":"Latest release",
+        "id":"Rilis terbaru",
+        "ja":"最新のリリース",
+        "ms":"Keluaran terkini",
+        "es":"Última versión"
+    },
+
+
+
+
+
+
+    "# Under development":{},
+    "Site+system":{
+        "ar":"Site system",
+        "zh":"站点系统",
+        "en":"Site system",
+        "id":"Sistem situs",
+        "ja":"サイトシステム",
+        "ms":"Sistem tapak",
+        "es":"Sistema de sitio"
+    },
+
+
+
+
+
+    "# What's new":{},
+    "Stay+informed+about+all+the+latest+development+on+SpeingCode+Read+below+to+find+out+which+features+have+recently+been+added.":{
+        "ar":"Stay informed about all the latest development on SpeingCode Read below to find out which features have recently been added.",
+        "zh":"了解 SpingCode 的最新动态。 请阅读下文以了解最近添加的功能。",
+        "en":"Stay informed about all the latest development on SpeingCode Read below to find out which features have recently been added.",
+        "id":"Ikuti perkembangan terkini di SpeingCode. Baca di bawah untuk mempelajari tentang fitur yang baru ditambahkan.",
+        "ja":"SpeingCode の最新開発に関する最新情報を常に入手してください。最近追加された機能については、以下をお読みください。",
+        "ms":"Ikuti perkembangan terkini di SpeingCode. Baca di bawah untuk mengetahui tentang ciri yang ditambah baru-baru ini.",
+        "es":"Manténgase actualizado con los últimos desarrollos en SpeingCode. Lea a continuación para conocer las funciones agregadas recientemente."
+    },
+    "The+website+program+has+been+updated.":{
+        "ar":"The website program has been updated.",
+        "zh":"网站程序已更新。",
+        "en":"The website program has been updated.",
+        "id":"Program situs web telah diperbarui.",
+        "ja":"ウェブサイトのプログラムを更新しました。",
+        "ms":"Program laman web telah dikemas kini.",
+        "es":"El programa del sitio web ha sido actualizado."
+    }
+}
