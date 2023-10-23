@@ -30,7 +30,6 @@
             "src": "../assets/img/screenshots/SpeingCodeEditor-Home-1918*994px.png",
             "sizes": "1918x994",
             "type": "image/png",
-            "form factor":"wide",
             "platform": "PC",
             "label": "SpeedCode app home screen"
         }
