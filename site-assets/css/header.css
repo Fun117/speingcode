@@ -256,8 +256,13 @@ header {
 
 a {
     color: inherit; /*リンクの色変化無効*/
-    text-decoration: none;
+    text-decoration: none; /*リンク下線削除*/
 }
+
+.link-decoration {
+    text-decoration:underline;
+}
+
 .linkHover a:hover { /*リンクホバーしたら下線表示*/
     text-decoration:underline;
 }
@@ -401,4 +406,63 @@ body {
 
 .spaceHeaderOuter {
     height: 70px;
+}
+
+
+
+
+
+
+
+blockquote, dl, dd, h1, h2, h3, h4, h5, h6, hr, figure, p, pre {
+    margin: 0;
+}
+
+
+
+
+
+
+
+/* discussion css */
+
+.discussionAreaBox {
+    margin: 50px 0 0 10px;
+}
+
+
+
+
+/* footer css */
+
+footer {
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    padding: 50px 30px;
+    color: var(--text-3);
+}
+
+footer>*:not(:last-child) {
+    margin-right: 30px;
+}
+
+footer p {
+    display: flex;
+    align-items: center;
+}
+
+footer a {
+    color: var(--text-3);
+}
+
+
+footer i {
+    fill: var(--text-3);
+    margin-right: 8px;
+}
+
+i, img, svg, video, canvas, audio, iframe, embed, object {
+    display: block;
+    vertical-align: middle;
 }
