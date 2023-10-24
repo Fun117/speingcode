@@ -1,0 +1,106 @@
+/* アニメーション --------------------------------------------------------------------------------------------------------*/
+
+/*　フィードイン*/
+.fadeIn{
+    animation: fadeIn 0.3s cubic-bezier(0.33, 1, 0.68, 1) forwards;
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/*　フィードアウト*/
+.fadeOut{
+    animation: fadeOut 0.3s cubic-bezier(0.0, 0, 0, 0) forwards;
+}
+@keyframes fadeOut{
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* フィードイン & 右から左*/
+.animeSredrl-1s {
+    animation: slideIn 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+.animeSredrl-1-5s {
+    animation: slideIn 1.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+@keyframes slideIn {
+    0% {
+        transform: translateX(180px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+    }
+    40%,100% {
+        opacity: 1;
+    }
+}
+
+/* フィードイン &　下から上 & 拡大*/
+.animeSreddtUpfadeIn {
+    animation: animeSreddtUpfadeIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+@keyframes animeSreddtUpfadeIn {
+    0% {
+        transform: translateY(40px) scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0) scale(1.0);
+    }
+    80%, 100% {
+        opacity: 1;
+    }
+}
+
+
+/* ページ読み込み CSS */
+.loader {
+    align-items: center;
+    background: #232325;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 999;
+}
+.loader::after {
+    -webkit-animation: loader 0.5s linear infinite;
+            animation: loader 0.5s linear infinite;
+    border: 1px solid rgb(130, 130, 130);
+    border-radius: 50%;
+    border-right: 1px solid rgba(129, 129, 129, 0.2);
+    border-top: 1px solid rgba(131, 131, 131, 0.2);
+    content: "";
+    height: 70px;
+    width: 70px;
+}
+@-webkit-keyframes loader {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@keyframes loader {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

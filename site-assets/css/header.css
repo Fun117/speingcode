@@ -179,13 +179,7 @@ header {
 
 
 /* ヘッダー背景 -----------------------------------------*/
-.header--TuwRF.transparent--\+Qg9m { /* 背景透明 */
-    border-bottom: 1px solid transparent;
-}
-.header--TuwRF.transparent--\+Qg9m .link {
-    opacity: .8;
-    text-decoration: none;
-}
+
 
 .header--TuwRF { /* 背景あり */
     width: 100%;
@@ -273,47 +267,8 @@ a {
 
 
 
-/* ロゴ -----------------------------------------*/
-.header--TuwRF>*>.logo--Fxnxa .logoSvg--iOWyY {
-    height: 32px;
-    display: block;
-}
-.header--TuwRF.transparent--\+Qg9m .exploreButton--188Nd, .header--TuwRF.transparent--\+Qg9m .logoSvg--iOWyY {
-    color: #fff;
-}
-.header--TuwRF .logoSvg--iOWyY {
-    color: #191b26;
-}
-svg:not(:root) {
-    overflow: hidden;
-}
-svg:not([fill]) {
-    fill: currentColor;
-}
-audio, canvas, iframe, img, svg, video {
-    vertical-align: middle;
-}
-*, :after, :before {
-    box-sizing: border-box;
-}
-/* ---------------------------------------------------------------------------------- */
-.site-title-text {
-    justify-content:left;
-}
 
 
-
-
-/* リストスペース -----------------------------------------
-.header--TuwRF>*>.mobileSearch--WI2Tv {
-    display: none;
-    flex: 0 0 auto;
-    margin-right: 8px;
-}
-.header--TuwRF>*>:nth-child(n+2) {
-    margin-left: 8px;
-}
-/* ---------------------------------------------------------------------------------- */
 
 
 
@@ -333,31 +288,10 @@ audio, canvas, iframe, img, svg, video {
 
 
 
-body, button, input, label {
-    font-size: 14px;
-    font-weight: 400;
-}
-
-body {
-    display: block;
-    margin: 0;
-}
-
-.linkContainer--bqO0l u {  /* リンクテキスト */
-    opacity: .8;
-    color: #fff;
-    font-weight: 600;
-}
-
-.link {
-    opacity: .8;
-    text-decoration: none;
-}
 
 
 
-
-
+/* 言語変更 CSS */
 
 .languageListBox {
     background-color: none;
@@ -413,15 +347,9 @@ body {
 
 
 
-
 blockquote, dl, dd, h1, h2, h3, h4, h5, h6, hr, figure, p, pre {
     margin: 0;
 }
-
-
-
-
-
 
 
 /* discussion css */
@@ -429,7 +357,6 @@ blockquote, dl, dd, h1, h2, h3, h4, h5, h6, hr, figure, p, pre {
 .discussionAreaBox {
     margin: 50px 0 0 10px;
 }
-
 
 
 
