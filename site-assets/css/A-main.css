@@ -520,9 +520,6 @@ img, svg, video, canvas, audio, iframe, embed, object {
     transition: margin .2s;
 }
 
-.text-\[1\.17em\] {
-    font-size: 1.17em;
-}
 
 blockquote, dl, dd, h1, h2, h3, h4, h5, h6, hr, figure, p, pre {
     margin: 0;
@@ -593,27 +590,8 @@ blockquote, dl, dd, h1, h2, h3, h4, h5, h6, hr, figure, p, pre {
     margin: 0;
 }
 
-a {
-    text-decoration: underline;
-}
 
-a {
-    color: inherit;
-    text-decoration: inherit;
-}
 
-.font-bold {
-    font-weight: 700;
-}
-
-.text-\[27px\] {
-    font-size: 27px;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-size: inherit;
-    font-weight: inherit;
-}
 
 .legacy-container { /* 外枠 */
     padding: 16px;
@@ -703,7 +681,53 @@ img, svg, video, canvas, audio, iframe, embed, object {
 
 /* ツール CSS -------------------------------------------------------------------------------------------------------- */
 
+.ListBoxes>*:not(:last-child) {
+    margin-bottom: 8px;
+}
 
 
 
+/* 余白 CSS -------------------------------------------------------------------------------------------------------- */
 
+
+/* Font CSS -------------------------------------------------------------------------------------------------------- */
+
+.font-bold {
+    font-weight: 700;
+}
+
+.text-\[1\.17em\] {
+    font-size: 1.17em;
+}
+
+.text-\[27px\] {
+    font-size: 27px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+a {
+    text-decoration: underline;
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+
+/* card CSS -------------------------------------------------------------------------------------------------------- */
+
+.card-title {
+    display: flex;
+    align-items: center;
+}
+
+
+.card-overlay {
+    color: var(--text-3);
+    float: right;
+}

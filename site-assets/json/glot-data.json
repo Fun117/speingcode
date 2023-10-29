@@ -148,6 +148,9 @@
 
 
 
+
+
+
     "# changelog":{},
     "Publish+your+page.":{
         "ar":"Publish your page.",
@@ -209,7 +212,7 @@
         "zh":"了解 SpingCode 的最新动态。 请阅读下文以了解最近添加的功能。",
         "en":"Stay informed about all the latest development on SpeingCode Read below to find out which features have recently been added.",
         "id":"Ikuti perkembangan terkini di SpeingCode. Baca di bawah untuk mempelajari tentang fitur yang baru ditambahkan.",
-        "ja":"SpeingCode の最新開発に関する最新情報を常に入手してください。最近追加された機能については、以下をお読みください。",
+        "ja":"SpeingCodeの最新の開発に関する最新情報を常に入手してください。最近追加された機能については、以下をお読みください。",
         "ms":"Ikuti perkembangan terkini di SpeingCode. Baca di bawah untuk mengetahui tentang ciri yang ditambah baru-baru ini.",
         "es":"Manténgase actualizado con los últimos desarrollos en SpeingCode. Lea a continuación para conocer las funciones agregadas recientemente."
     },
@@ -221,5 +224,41 @@
         "ja":"ウェブサイトのプログラムを更新しました。",
         "ms":"Program laman web telah dikemas kini.",
         "es":"El programa del sitio web ha sido actualizado."
+    },
+
+
+
+
+
+    "# Guides":{},
+    
+
+
+
+
+    "# Tools":{},
+
+
+
+
+
+    "# Editor":{},
+    "default":{
+        "ar":"default",
+        "zh":"默认",
+        "en":"default",
+        "id":"bawaan",
+        "ja":"デフォルト",
+        "ms":"lalai",
+        "es":"por defecto"
+    },
+    "A+JSON+text+file+that+provides+information+about+your+web+application":{
+        "ar":"default",
+        "zh":"默认",
+        "en":"default",
+        "id":"bawaan",
+        "ja":"デフォルト",
+        "ms":"lalai",
+        "es":"por defecto"
     }
 }

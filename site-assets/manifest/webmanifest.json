@@ -37,7 +37,10 @@
     "id": "../../",
     "start_url": "../../",
     "background_color": "#262626",
-    "display_override": ["window-control-overlay", "minimal-ui"],
+    "display_override": [
+        "window-control-overlay", 
+        "minimal-ui"
+    ],
     "display": "standalone",
     "theme_color": "#1a1a1a",
     "description": "A web app that makes it easy to write code."

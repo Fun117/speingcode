@@ -155,7 +155,6 @@
     --diff-numbers-separation: rgba(84, 174, 255, .4);
 }
 
-
 header {
     display: flex;
     justify-content: space-between;
@@ -169,6 +168,10 @@ header {
     background-color: var(--background-2);
 }
 
+.headerspees {
+    width: 100%;
+    height: 64px;
+}
 
 
 
@@ -212,10 +215,12 @@ header {
 
 .header-leftArea {
     max-width: 1830px;
+    /* min-width: 180px; */
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: left;
+    overflow: scroll;
 }
 .header-site-logo-area {
     margin: 0 1em 0 0; /* ブロック前後の余白 */

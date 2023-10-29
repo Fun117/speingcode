@@ -17,7 +17,7 @@
         <link rel="stylesheet" href="../site-assets/css/A-main.css" />
         <link rel="stylesheet" href="../site-assets/css/A-parts.css" />
 
-        <link rel="stylesheet" href="../../../site-assets/css/all.css" />
+        <link rel="stylesheet" href="../site-assets/css/all.css" />
         <!-- JS -->
         <script src="../site-assets/js/languageChange.js"></script>
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -39,7 +39,7 @@
                             <img id="citohub-icon" style="width: 50px; height: 50px;" src="../site-assets/assets/logo/CitoHubIcon.png" alt="logo">
                         </a>
                     </div>
-                    <div class="site-title-text"><strong style="font-weight: bold; font-size: 18px;" glot-model="changelog">changelog</strong></div>                    
+                    <div class="site-title-text"><strong style="font-weight: bold; font-size: 18px;" glot-model="Tools">Tools</strong></div>                    
                 </div>
                 <div class="mobileSearch--WI2Tv"></div>
                 <div class="LeftCen">
@@ -86,54 +86,44 @@
             </div>
         </header>
         <main>
-            <div class="legacy-container changelog">
+            <div class="legacy-container">
                 <div class="navigation">
-                    <a href="../versions/" class="btn btn-link">
-                        <i class="fa-solid fa-bars"></i>
-                        <span glot-model="Versions">Versions</span>
-                    </a>
-                    <input id="searchBox" class="btn btn-input query-search" placeholder="Search changes" type="text">
+                    <input id="searchBox" class="btn btn-input query-search" placeholder="Search Tools" type="text">
                 </div>
                 <div class="card-column">
                     <span id="cardNull" class="note is-hidden">No results</span>
-                    <div class="versionListBoxes animeSreddtUpfadeIn">
-                        <div class="card box">
+                    <div class="ListBoxes animeSreddtUpfadeIn">
+                        <a class="card box margin-bottom" href="./editor/webmanifest/">
+                            <span class="card-overlay">
+                                0.0.1
+                            </span>
                             <div class="card-content">
-                                <div class="badges-list">
-                                    <div class="badge" style="--tint: 25;" glot-model="page">
-                                        page
-                                    </div>
-                                    <div class="badge" style="--tint: 184;" glot-model="update">
-                                        update
-                                    </div>
-                                </div>
-                                <div class="changelog-content">
-                                    <p glot-model="Publish+your+page.">Publish your page.</p>
-                                </div>
+                                <h3 class="card-title font-bold text-[1.17em]">
+                                    webmanifest
+                                </h3>
+                                <p class="card-subtitle">
+                                    /webmanifest
+                                </p>
                             </div>
-                        </div>
-                        <div class="card box">
+                        </a>
+                        <a class="card box" href="./editor/webmanifest/">
+                            <span class="card-overlay">
+                                0.0.0
+                            </span>
                             <div class="card-content">
-                                <div class="badges-list">
-                                    <div class="badge" style="--tint: 25;" glot-model="page">
-                                        pack
-                                    </div>
-                                    <div class="badge" style="--tint: 50;">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z"></path></svg>
-                                        <a glot-model="breaking">breaking</a>
-                                    </div>
-                                </div>
-                                <div class="changelog-content">
-                                    <p glot-model="The+website+program+has+been+updated.">The website program has been updated.</p>
-                                </div>
+                                <h3 class="card-title font-bold text-[1.17em]">
+                                    SpeingCode Framework
+                                </h3>
+                                <p class="card-subtitle">
+                                    /speingcode-framework
+                                </p>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
         </main>
     </body>
-
     <!-- ページロードアニメーション-->
     <div id="js-loader" class="loader"></div>
     <script>
@@ -156,7 +146,6 @@
     <!-- ページ内検索機能 -->
     <link rel="stylesheet" href="../site-assets/css/search.css" />
     <script src="../site-assets/js/search.js"></script>
-
 
     <!-- Glottologist読み込み -->
     <script  src="https://unpkg.com/glottologist"></script>
@@ -256,25 +245,25 @@
             let rootElement = document.documentElement;
             lang =(rootElement.lang);
             if(lang === "ar"){
-                document.getElementById("site-title").innerHTML = "changelog - SpeingCodeEditor"
+                document.getElementById("site-title").innerHTML = "Tools - SpeingCodeEditor"
             }else{
                 if(lang === "zh"){
-                    document.getElementById("site-title").innerHTML = "changelog - SpeingCodeEditorr"
+                    document.getElementById("site-title").innerHTML = "Tools - SpeingCodeEditor"
                 }else{
                     if(lang === "en"){
-                        document.getElementById("site-title").innerHTML = "changelog - SpeingCodeEditor"
+                        document.getElementById("site-title").innerHTML = "Tools - SpeingCodeEditor"
                     }else{
                         if(lang === "id"){
-                            document.getElementById("site-title").innerHTML = "changelog - SpeingCodeEditor"
+                            document.getElementById("site-title").innerHTML = "Tools - SpeingCodeEditor"
                         }else{
                             if(lang === "ja"){
-                                document.getElementById("site-title").innerHTML = "変更履歴 - SpeingCodeEditor"
+                                document.getElementById("site-title").innerHTML = "ツール - SpeingCodeEditor"
                             }else{
                                 if(lang === "ms"){
-                                    document.getElementById("site-title").innerHTML = "changelog - SpeingCodeEditor"
+                                    document.getElementById("site-title").innerHTML = "Tools - SpeingCodeEditor"
                                 }else{
                                     if(lang === "es"){
-                                        document.getElementById("site-title").innerHTML = "changelog - SpeingCodeEditor"
+                                        document.getElementById("site-title").innerHTML = "Tools - SpeingCodeEditor"
                                     }
                                 }
                             }
