@@ -170,7 +170,7 @@
                                         </font>
                                     </span>
                                 </div>
-                                <label>name</label>
+                                <label glot-model="name">name</label>
                                 <input type="text">
                             </div>
                         </div>
@@ -188,7 +188,7 @@
                                         </font>
                                     </span>
                                 </div>
-                                <label>short_name</label>
+                                <label glot-model="short_name">short_name</label>
                                 <input type="text">
                             </div>
                         </div>
@@ -206,7 +206,7 @@
                                         </font>
                                     </span>
                                 </div>
-                                <label>start_url</label>
+                                <label glot-model="start_url">start_url</label>
                                 <input type="url">
                             </div>
                         </div>
@@ -224,12 +224,12 @@
                                         </font>
                                     </span>
                                 </div>
-                                <label>display</label>
+                                <label glot-model="display">display</label>
                                 <select>
-                                    <option value="fullscreen">fullscreen</option>
-                                    <option value="standalone">standalone</option>
-                                    <option value="minimal-ui">minimal-ui</option>
-                                    <option value="browser">browser</option>
+                                    <option value="fullscreen" glot-model="fullscreen">fullscreen</option>
+                                    <option value="standalone" glot-model="standalone">standalone</option>
+                                    <option value="minimal-ui" glot-model="minimal-ui">minimal-ui</option>
+                                    <option value="browser" glot-model="browser">browser</option>
                                 </select>
                             </div>
                         </div>
@@ -247,7 +247,7 @@
                                         </font>
                                     </span>
                                 </div>
-                                <label>display_override</label>
+                                <label glot-model="display_override">display_override</label>
                                 <button onclick="displayDataAaaCnt(`add`)" id="manifest_display_override" class="cnt1 node-collapse closed " aria-label="Expand"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zm.75 4.75a.75.75 0 00-1.5 0v2.5h-2.5a.75.75 0 000 1.5h2.5v2.5a.75.75 0 001.5 0v-2.5h2.5a.75.75 0 000-1.5h-2.5v-2.5z"></path></svg></button>
                             </div>
                             <div id="manifest_display_override_box" class="node-body">
@@ -268,8 +268,8 @@
                                         </font>
                                     </span>
                                 </div>
-                                <label>background_color</label>
-                                <input type="color" style="padding: 0 5px 0 5px;">
+                                <label glot-model="background_color">background_color</label>
+                                <input type="color" style="padding: 0 5px 0 5px; width: 40px;">
                             </div>
                         </div>
                         <div class="node string-node">
@@ -286,7 +286,7 @@
                                         </font>
                                     </span>
                                 </div>
-                                <label>description</label>
+                                <label glot-model="description">description</label>
                                 <textarea style="width: 236px;"></textarea>
                             </div>
                         </div>
@@ -304,7 +304,7 @@
                                         </font>
                                     </span>
                                 </div>
-                                <label>related_applications</label>
+                                <label glot-model="related_applications">related_applications</label>
                                 <button onclick="related_applications_Cnt(`add`)" id="related_applications" class="cnt1 node-collapse closed " aria-label="Expand"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zm.75 4.75a.75.75 0 00-1.5 0v2.5h-2.5a.75.75 0 000 1.5h2.5v2.5a.75.75 0 001.5 0v-2.5h2.5a.75.75 0 000-1.5h-2.5v-2.5z"></path></svg></button>
                             </div>
                             <div id="related_applications_box" class="node-body"></div>
