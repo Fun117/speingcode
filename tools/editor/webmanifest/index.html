@@ -43,6 +43,8 @@
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
         <script src="../../../site-assets/js/tools/editor/webmanifest.js"></script>
+
+        <script src="../../../site-assets/js/post.js"></script>
         <!-- code font for google-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -139,6 +141,7 @@
                     <div class="badge" style="--tint: -150;" glot-model="Pre-Alpha_version">
                         Pre-Alpha version
                     </div>
+                    <div id="button_action_like_box" class="heart-container" title="Love" style="width: 25px; top: -13px;"></div>
                 </div>
                 <div class="node object-node" data-category="predicate">
                     <div class="node-header">
@@ -334,7 +337,7 @@
                     <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
                 </svg>
             </div>
-            <div id="actioDownload" class="popup-action action-download shown tooltipped tip-nw" aria-label="Download" onclick="editor_code_download()">
+            <div id="actioDownload" class="popup-action action-download shown tooltipped tip-nw" aria-label="Download" onclick="editor_code_download(),post_download_count_data_add()">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
                     <path fill-rule="evenodd" d="M7.47 10.78a.75.75 0 001.06 0l3.75-3.75a.75.75 0 00-1.06-1.06L8.75 8.44V1.75a.75.75 0 00-1.5 0v6.69L4.78 5.97a.75.75 0 00-1.06 1.06l3.75 3.75zM3.75 13a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5z"></path>
                 </svg>
@@ -453,6 +456,7 @@
             </div>
         </div>
     </body>
+    <script src="../../../site-assets/js/action_button.js"></script>
 
     <!-- ページロードアニメーション-->
     <div id="js-loader" class="loader"></div>

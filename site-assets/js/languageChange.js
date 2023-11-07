@@ -16,3 +16,11 @@ function languageChangeBtn(){ // 言語選 選択リスト
 function languageListAreaNone(){
     languageListArea.style.display ="none";
 }
+
+
+
+
+
+
+//アクティブ送信
+fetch('https://script.google.com/macros/s/AKfycbygMWwzgPCOYj_gWUu5yXmV5NhRQ54RRrTDzyTTU96F6yQd85fx3pN8I05bDMllGt7G/exec?mode=active_count_data&active=1', { mode: 'no-cors' });
