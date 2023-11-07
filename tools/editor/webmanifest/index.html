@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+    <script id="sitePasswordForm">
+        let port = '48c09240-ad5a-4aef-9111-d809a79efcea';
+        function sitePass(){
+            var pass = prompt('Password');
+            if(pass == null){
+                window.location.href = '../../../'
+            }else{
+                if(pass === port){
+                    document.getElementById('sitePasswordForm').innerHTML = ''
+                }else{
+                    alert('Please enter your password');
+                    sitePass();
+                }
+            }
+        };
+        if(location.hostname != '127.0.0.1'){
+            window.onload=sitePass();
+        };
+    </script>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- icon -->
+        <link rel="icon" type="image/x-icon" href="../../../site-assets/assets/logo/CitoHubIcon.png">
+        <title id="site-title">SpeingCodeEditor</title>
+        <meta name="description" content="A web app that makes it easy to write code.">
+        <!-- .webmanifest--> 
+        <meta name="theme-color" content="#1a1a1a"/>
+        <link rel="manifest" href="../../../site-assets/manifest/webmanifest.json" />
+        <!-- CSS -->
+        <link rel="stylesheet" href="../../../site-assets/css/header.css" />
+        <link rel="stylesheet" href="../../../site-assets/css/A-animation.css" />
+        <link rel="stylesheet" href="../../../site-assets/css/A-main.css" />
+        <link rel="stylesheet" href="../../../site-assets/css/A-parts.css" />
+
+        <link rel="stylesheet" href="../../../site-assets/css/editor.css" />
+
+        <link rel="stylesheet" href="../../../site-assets/css/all.css" />
+        <!-- JS -->
+        <script src="../../../site-assets/js/languageChange.js"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+        <script src="../../../site-assets/js/tools/editor/webmanifest.js"></script>
+        <!-- code font for google-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+        <!-- Font Awesome -->
+        <script src="https://kit.fontawesome.com/9b65a345ec.js" crossorigin="anonymous"></script>
+        <!-- 国旗アイコンcss-->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/4.1.3/css/flag-icons.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <header id="headerBackground" class="header--TuwRF">
+            <div>
+                <div class="header-leftArea">
+                    <div id="logoFxnxa" class="logo--Fxnxa header-site-logo-area">
+                        <a href="../../../" aria-label="citohub-icon">
+                            <img id="citohub-icon" style="width: 50px; height: 50px;" src="../../../site-assets/assets/logo/CitoHubIcon.png" alt="logo">
+                        </a>
+                    </div>
+                    <div class="site-title-text"><strong style="font-weight: bold; font-size: 18px;" glot-model="webmanifest">webmanifest</strong></div>                    
+                </div>
+                <div class="mobileSearch--WI2Tv"></div>
+                <div class="LeftCen">
+                    <a href="../../../" aria-label="Discussions"><div class="LeftCenItem animeSreddtUpfadeIn"><i class="fa-solid fa-bell" style="font-size: 20px;"></i></div></a>
+                    <div class="LeftCenItem animeSreddtUpfadeIn" aria-label="language"><i id="languageChange" class="fa-solid fa-earth-asia" style="font-size: 20px;" onclick="languageChangeBtn()"></i></div>
+                </div>
+                <div class="languageListBox">
+                    <div id="languageListArea" class="nav nav-masthead justify-content-center languageList">
+                        <div class="languageListAreaBoxs">
+                            <li class="nav-link link" href="" id="ar" glot-model="sa" onclick="languageListAreaNone()">
+                                <span class="flag-icon flag-icon-sa"></span>
+                                <a href="/" style="text-decoration: none;">اللغة العربية</a>
+                            </li>
+                            <li  class="nav-link link" href="" id="zh" glot-model="cn" onclick="languageListAreaNone()">
+                                <span class="flag-icon flag-icon-cn"></span>
+                                <a href="/" style="text-decoration: none;">中文</a>
+                            </li>
+                            <li  class="nav-link link" href="" id="en" glot-model="us" onclick="languageListAreaNone()">
+                                <span class="flag-icon flag-icon-us"></span>
+                                <a href="/" style="text-decoration: none;">English</a>
+                            </li>
+                            <li  class="nav-link link" href="" id="id" glot-model="id" onclick="languageListAreaNone()">
+                                <span class="flag-icon flag-icon-id"></span>
+                                <a href="/" style="text-decoration: none;">Bahasa Indonesia</a>
+                            </li>
+                            <li class="nav-link link" href="" id="ja" glot-model="jp" onclick="languageListAreaNone()">
+                                <span class="flag-icon flag-icon-jp"></span>
+                                <a href="/" style="text-decoration: none;">日本語</a>
+                            </li>
+                            <li  class="nav-link link" href="" id="ms" glot-model="my" onclick="languageListAreaNone()">
+                                <span class="flag-icon flag-icon-my"></span>
+                                <a href="/" style="text-decoration: none;">Bahasa Melayu</a>
+                            </li>
+                            <li  class="nav-link link" href="" id="es" glot-model="es" onclick="languageListAreaNone()">
+                                <span class="flag-icon flag-icon-es"></span>
+                                <a href="/" style="text-decoration: none;">español</a>
+                            </li>
+                        </div>
+                    </div>
+                </div>
+                <div class="LeftCen">
+                    <a href="https://github.com/Fun117" target="_blank" class="LeftCenItem animeSreddtUpfadeIn"><i class="fa-brands fa-github" style="font-size: 20px;"></i></a>
+                </div>
+            </div>
+        </header>
+        <div class="headerspees"></div>
+
+        <!--
+            // help button //
+
+                <div class="node-icon node-help">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+                        <a style="padding: 0; background: none; fill: var(--node-border); " href="https://developer.mozilla.org/en-US/docs/Web/Manifest" target="_blank">
+                            <path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path>
+                        </a>
+                    </svg>
+                    <span class="icon-popup">
+                        A JSON text file that provides information about your web application.
+                    </span>
+                </div>
+
+
+            // error button //
+
+                <div class="node-icon node-error">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm9 3a1 1 0 11-2 0 1 1 0 012 0zm-.25-6.25a.75.75 0 00-1.5 0v3.5a.75.75 0 001.5 0v-3.5z"></path></svg>
+                    <span class="icon-popup">Expected a string</span>
+                </div>
+        -->
+
+        <!-- エディター -->
+        <main id="main">
+            <div class="tree" data-cy="tree">
+                <div class="badges-list" style="padding: 0px 0 10px 0;">
+                    <div class="badge" style="--tint: -150;" glot-model="Pre-Alpha_version">
+                        Pre-Alpha version
+                    </div>
+                </div>
+                <div class="node object-node" data-category="predicate">
+                    <div class="node-header">
+                        <div class="node-icon node-help">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+                                <a style="padding: 0; background: none; fill: var(--node-border); " href="https://developer.mozilla.org/en-US/docs/Web/Manifest" target="_blank">
+                                    <path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path>
+                                </a>
+                            </svg>
+                            <span class="icon-popup">
+                                <font id="help_webmanifest">
+                                    A JSON text file that provides information about your web application
+                                </font>
+                            </span>
+                        </div>
+                        <select>
+                            <option value="object" glot-model="default">default</option>
+                        </select>
+                        <select>
+                            <option value="webmanifest">webmanifest</option>
+                        </select>
+                    </div>
+                    <div class="node-body">
+                        <div class="node string-node">
+                            <div class="node-header">
+                                <div class="node-icon node-help">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+                                        <a style="padding: 0; background: none; fill: var(--node-border); " href="https://developer.mozilla.org/en-US/docs/Web/Manifest/name" target="_blank">
+                                            <path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path>
+                                        </a>
+                                    </svg>
+                                    <span class="icon-popup">
+                                        <font id="help_webmanifest_name">
+                                            The name of the web application as it normally appears
+                                        </font>
+                                    </span>
+                                </div>
+                                <label glot-model="name">name</label>
+                                <input id="codeData_name" type="text">
+                            </div>
+                        </div>
+                        <div class="node string-node">
+                            <div class="node-header">
+                                <div class="node-icon node-help">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+                                        <a style="padding: 0; background: none; fill: var(--node-border); " href="https://developer.mozilla.org/en-US/docs/Web/Manifest/short_name" target="_blank">
+                                            <path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path>
+                                        </a>
+                                    </svg>
+                                    <span class="icon-popup">
+                                        <font id="help_webmanifest_short_name">
+                                            Displayed to the user when there is not enough space to display the Name
+                                        </font>
+                                    </span>
+                                </div>
+                                <label glot-model="short_name">short_name</label>
+                                <input id="codeData_short_name" type="text">
+                            </div>
+                        </div>
+                        <div class="node string-node">
+                            <div class="node-header">
+                                <div class="node-icon node-help">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+                                        <a style="padding: 0; background: none; fill: var(--node-border); " href="https://developer.mozilla.org/en-US/docs/Web/Manifest/start_url" target="_blank">
+                                            <path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path>
+                                        </a>
+                                    </svg>
+                                    <span class="icon-popup">
+                                        <font id="help_webmanifest_start_url">
+                                            The start_url member is a string representing the starting URL
+                                        </font>
+                                    </span>
+                                </div>
+                                <label glot-model="start_url">start_url</label>
+                                <input id="codeData_start_url" type="url">
+                            </div>
+                        </div>
+                        <div class="node string-node">
+                            <div class="node-header">
+                                <div class="node-icon node-help">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+                                        <a style="padding: 0; background: none; fill: var(--node-border); " href="https://developer.mozilla.org/en-US/docs/Web/Manifest/display" target="_blank">
+                                            <path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path>
+                                        </a>
+                                    </svg>
+                                    <span class="icon-popup">
+                                        <font id="help_webmanifest_display">
+                                            The display member is a string that determines the developers' preferred display mode for the website
+                                        </font>
+                                    </span>
+                                </div>
+                                <label glot-model="display">display</label>
+                                <select id="codeData_display">
+                                    <option value="fullscreen" glot-model="fullscreen">fullscreen</option>
+                                    <option value="standalone" glot-model="standalone">standalone</option>
+                                    <option value="minimal-ui" glot-model="minimal-ui">minimal-ui</option>
+                                    <option value="browser" glot-model="browser">browser</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="node object-node">
+                            <div class="node-header">
+                                <div class="node-icon node-help">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+                                        <a style="padding: 0; background: none; fill: var(--node-border); " href="https://developer.mozilla.org/en-US/docs/Web/Manifest/display_override" target="_blank">
+                                            <path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path>
+                                        </a>
+                                    </svg>
+                                    <span class="icon-popup">
+                                        <font id="help_webmanifest_display_override">
+                                            The display member is used to determine the developer's preferred display mode for a website
+                                        </font>
+                                    </span>
+                                </div>
+                                <label glot-model="display_override">display_override</label>
+                                <button onclick="displayDataAaaCnt(`add`)" id="manifest_display_override" class="cnt1 node-collapse closed " aria-label="Expand"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zm.75 4.75a.75.75 0 00-1.5 0v2.5h-2.5a.75.75 0 000 1.5h2.5v2.5a.75.75 0 001.5 0v-2.5h2.5a.75.75 0 000-1.5h-2.5v-2.5z"></path></svg></button>
+                            </div>
+                            <div id="manifest_display_override_box" class="node-body">
+                            </div>
+                        </div>
+
+                        <div class="node string-node">
+                            <div class="node-header">
+                                <div class="node-icon node-help">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+                                        <a style="padding: 0; background: none; fill: var(--node-border); " href="https://developer.mozilla.org/en-US/docs/Web/Manifest/background_color" target="_blank">
+                                            <path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path>
+                                        </a>
+                                    </svg>
+                                    <span class="icon-popup">
+                                        <font id="help_webmanifest_background_color">
+                                            The background_color member defines a placeholder background color for the application page to display before its stylesheet is loaded
+                                        </font>
+                                    </span>
+                                </div>
+                                <label glot-model="background_color">background_color</label>
+                                <input id="codeData_background_color" type="color" value="#FF0000">
+                            </div>
+                        </div>
+                        <div class="node string-node">
+                            <div class="node-header">
+                                <div class="node-icon node-help">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+                                        <a style="padding: 0; background: none; fill: var(--node-border); " href="https://developer.mozilla.org/en-US/docs/Web/Manifest/description" target="_blank">
+                                            <path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path>
+                                        </a>
+                                    </svg>
+                                    <span class="icon-popup">
+                                        <font id="help_webmanifest_description">
+                                            The description member is a string in which developers can explain what the application does
+                                        </font>
+                                    </span>
+                                </div>
+                                <label glot-model="description">description</label>
+                                <textarea id="codeData_description" style="width: 236px;"></textarea>
+                            </div>
+                        </div>
+                        <div class="node object-node">
+                            <div class="node-header">
+                                <div class="node-icon node-help">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+                                        <a style="padding: 0; background: none; fill: var(--node-border); " href="https://developer.mozilla.org/en-US/docs/Web/Manifest/related_applications" target="_blank">
+                                            <path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path>
+                                        </a>
+                                    </svg>
+                                    <span class="icon-popup">
+                                        <font id="help_webmanifest_related_applications">
+                                            The related_applications field is an array of objects specifying native applications that are installable by, or accessible to, the underlying platform
+                                        </font>
+                                    </span>
+                                </div>
+                                <label glot-model="related_applications">related_applications</label>
+                                <button onclick="related_applications_Cnt(`add`)" id="related_applications" class="cnt1 node-collapse closed " aria-label="Expand"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zm.75 4.75a.75.75 0 00-1.5 0v2.5h-2.5a.75.75 0 000 1.5h2.5v2.5a.75.75 0 001.5 0v-2.5h2.5a.75.75 0 000-1.5h-2.5v-2.5z"></path></svg></button>
+                            </div>
+                            <div id="related_applications_box" class="node-body"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <style>
+            
+        </style>
+        <input type="checkbox" id="rightActionsBtn" style="display: none;">
+        <div id="rightActions" class="popup-actions right-actions" style="--offset: -208px;">
+            <div class="popup-action action-preview tooltipped tip-nw" aria-label="Show preview">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+                    <path fill-rule="evenodd" d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zM6.379 5.227A.25.25 0 006 5.442v5.117a.25.25 0 00.379.214l4.264-2.559a.25.25 0 000-.428L6.379 5.227z"></path>
+                </svg>
+            </div>
+            <div id="actionShare" class="popup-action action-share shown tooltipped tip-nw" aria-label="Share">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+                    <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+                </svg>
+            </div>
+            <div id="actioDownload" class="popup-action action-download shown tooltipped tip-nw" aria-label="Download" onclick="editor_code_download()">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+                    <path fill-rule="evenodd" d="M7.47 10.78a.75.75 0 001.06 0l3.75-3.75a.75.75 0 00-1.06-1.06L8.75 8.44V1.75a.75.75 0 00-1.5 0v6.69L4.78 5.97a.75.75 0 00-1.06 1.06l3.75 3.75zM3.75 13a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5z"></path>
+                </svg>
+            </div>
+            <div id="actionCopy" class="popup-action action-copy shown tooltipped tip-nw" aria-label="Copy" onclick="code_view_copy()">
+                <svg id="actionCopySvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+                    <path fill-rule="evenodd" d="M5.75 1a.75.75 0 00-.75.75v3c0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75v-3a.75.75 0 00-.75-.75h-4.5zm.75 3V2.5h3V4h-3zm-2.874-.467a.75.75 0 00-.752-1.298A1.75 1.75 0 002 3.75v9.5c0 .966.784 1.75 1.75 1.75h8.5A1.75 1.75 0 0014 13.25v-9.5a1.75 1.75 0 00-.874-1.515.75.75 0 10-.752 1.298.25.25 0 01.126.217v9.5a.25.25 0 01-.25.25h-8.5a.25.25 0 01-.25-.25v-9.5a.25.25 0 01.126-.217z"></path>
+                </svg>
+            </div>
+            <label for="rightActionsBtn">
+                <div id="actionCodeShown?" class="popup-action action-code shown tooltipped tip-nw" aria-label="Hide output">
+                    <svg id="actionCodeSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+                        <path fill-rule="evenodd" d="M6.22 3.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 010-1.06z"></path>
+                    </svg>
+                </div>
+            </label>
+        </div>
+        <div class="popup-preview"></div>
+        <div id="EditorCodeDisplay" class="popup-source shown"><pre id="editor" class="source ace_editor ace-tm" draggable="false" style="font-size: 14px;"><div class="ace_layer ace_text-layer" style=" padding: 0px 4px;"><div class="ace_line" style="height:19px"><span class="ace_paren ace_lparen">{</span></div><div class="ace_line" style="height:19px">    <span class="ace_variable">"name"</span>: <span id="code_name" class="ace_string">""</span>,</div><div class="ace_line" style="height:19px">    <span class="ace_variable">"short_name"</span>: <span id="code_short_name" class="ace_string">""</span>,</div><div class="ace_line" style="height:19px">    <span class="ace_variable">"start_url"</span>: <span id="code_start_url" class="ace_string">""</span>,</div><div class="ace_line" style="height:19px">    <span class="ace_variable">"display_override"</span>: <span id="code_display_override" class="ace_string">""</span>,</div><div class="ace_line" style="height:19px">    <span class="ace_variable">"display"</span>: <span id="code_display" class="ace_string">""</span>,</div><div class="ace_line" style="height:19px">    <span class="ace_variable">"background_color"</span>: <span id="code_background_color" class="ace_string">""</span>,</div><div class="ace_line" style="height:19px">    <span class="ace_variable">"description"</span>: <span id="code_description" class="ace_string">""</span>,</div><div class="ace_line" style="height:19px">    <span class="ace_variable">"related_applications"</span>: <span id="code_related_applications" class="ace_string">""</span>,</div><div class="ace_line" style="height:19px"><span class="ace_paren ace_rparen">}</span></div></div></pre></div>
+
+        <script>
+            window.setInterval(checkCodeData, 100);
+
+            function checkCodeData(){
+                document.getElementById('code_name').innerHTML = ('"' + document.getElementById('codeData_name').value + '"');
+                document.getElementById('code_short_name').innerHTML = ('"' + document.getElementById('codeData_short_name').value + '"');
+                document.getElementById('code_start_url').innerHTML = ('"' + document.getElementById('codeData_start_url').value + '"');
+                document.getElementById('code_display').innerHTML = ('"' + document.getElementById('codeData_display').value + '"');
+                document.getElementById('code_background_color').innerHTML = ('"' + document.getElementById('codeData_background_color').value + '"');
+                document.getElementById('code_description').innerHTML = ('"' + document.getElementById('codeData_description').value.replace(/\r?\n/g,"") + '"');
+            };
+        </script>
+
+        <!-- 左サイドバー表示・非表示ボタン-->
+        <input type="checkbox" id="leftActionsBtn" style="display: none;">
+        <div class="popup-actions left-actions" style="--offset: 50px;" id="left-actions">
+            <div class="popup-action action-project shown tooltipped tip-ne" aria-label="editor sidebar">
+                <label for="leftActionsBtn">
+                    <svg id="leftActionsShow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+                        <path fill-rule="evenodd" d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"></path>
+                    </svg>
+                    <svg id="leftActionsHide" style="display: none;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+                        <path fill-rule="evenodd" d="M9.78 12.78a.75.75 0 01-1.06 0L4.47 8.53a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L6.06 8l3.72 3.72a.75.75 0 010 1.06z"></path>
+                    </svg>
+                </label>
+            </div>
+        </div>
+
+        <!-- サイドバーサイドバー表示ボタン処理 -->
+        <script>
+            window.addEventListener('DOMContentLoaded',function(){
+                const checkboxSingleLeftActionsBtn = document.getElementById('leftActionsBtn');
+                const checkboxSingleRightActionsBtn = document.getElementById('rightActionsBtn');
+                
+                checkboxSingleLeftActionsBtn.addEventListener('change',function(){
+                    if(this.checked) {
+                        document.getElementById('leftActionsShow').style.display = 'none';
+                        document.getElementById('leftActionsHide').style.display = 'block';
+
+                        document.getElementById('main').classList.add('has-project');
+                    } else{
+                        document.getElementById('leftActionsShow').style.display = 'block';
+                        document.getElementById('leftActionsHide').style.display = 'none';
+
+                        document.getElementById('main').classList.remove('has-project');
+                    } 
+                });
+
+                checkboxSingleRightActionsBtn.addEventListener('change',function(){
+                    if(this.checked) {
+                        document.getElementById('rightActions').style = '--offset: -208px';
+                        document.getElementById('actioDownload').classList.add('shown');
+                        document.getElementById('actionCopy').classList.add('shown');
+                        document.getElementById('actionCodeShown?').ariaLabel = 'Hide output';
+                        document.getElementById('actionCodeSvg').innerHTML = (`<path fill-rule="evenodd" d="M6.22 3.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 010-1.06z"></path>`);
+
+                        document.getElementById('EditorCodeDisplay').classList.add('shown');
+                    }else{
+                        document.getElementById('rightActions').style = '--offset: -108px';
+                        document.getElementById('actioDownload').classList.remove('shown');
+                        document.getElementById('actionCopy').classList.remove('shown');
+                        document.getElementById('actionCodeShown?').ariaLabel = 'Show output';
+                        document.getElementById('actionCodeSvg').innerHTML = (`<path fill-rule="evenodd" d="M4.72 3.22a.75.75 0 011.06 1.06L2.06 8l3.72 3.72a.75.75 0 11-1.06 1.06L.47 8.53a.75.75 0 010-1.06l4.25-4.25zm6.56 0a.75.75 0 10-1.06 1.06L13.94 8l-3.72 3.72a.75.75 0 101.06 1.06l4.25-4.25a.75.75 0 000-1.06l-4.25-4.25z"></path>`);
+
+                        document.getElementById('EditorCodeDisplay').classList.remove('shown');
+                    }
+                })
+            });
+        </script>
+        <!-- 左サイドバー -->
+        <div id="popup-project" class="popup-project">
+            <div class="project-controls">
+                <div icon="chevron_down" label="Drafts" tooltip="Switch project" tooltiploc="se" class="btn-menu undefined">
+                    <div class="btn tooltipped tip-se" aria-label="Switch project">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+                            <path fill-rule="evenodd" d="M12.78 6.22a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06 0L3.22 7.28a.75.75 0 011.06-1.06L8 9.94l3.72-3.72a.75.75 0 011.06 0z"></path>
+                        </svg>
+                        <span>Drafts</span>
+                    </div>
+                </div>
+                <div icon="kebab_horizontal" class="btn-menu undefined">
+                    <div class="btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+                            <path d="M8 9a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM1.5 9a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm13 0a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="file-view">
+                <div class="badges-list" style="padding: 5px 0 5px 8px;">
+                    <div class="badge" style="--tint: -150;" glot-model="Pre-Alpha">
+                        Pre-Alpha version
+                    </div>
+                </div>
+                <span>No files</span>
+            </div>
+        </div>
+    </body>
+
+    <!-- ページロードアニメーション-->
+    <div id="js-loader" class="loader"></div>
+    <script>
+        const loader = document.getElementById('js-loader');
+        window.addEventListener('load', () => {
+        const ms = 400;
+        loader.style.transition = 'opacity ' + ms + 'ms';
+
+        const loaderOpacity = function(){
+            loader.style.opacity = 0;
+        }
+        const loaderDisplay = function(){
+            loader.style.display = "none";
+        }
+            setTimeout(loaderOpacity, 1);
+            setTimeout(loaderDisplay, ms);
+        })
+    </script>
+
+    <!-- Glottologist読み込み -->
+    <script  src="https://unpkg.com/glottologist"></script>
+    <script>
+        const glot = new Glottologist();
+
+        // クッキーから言語情報を取得
+        if(navigator.cookieEnabled){ // クッキーがクッキーが使えるか確認
+            // クッキーを読み出す
+            const obj = convertCookieToObject(document.cookie);
+            if(obj !== ""){ //クッキーにデータがあるか
+                let jsonLang = obj.lang;
+                if(jsonLang = ""){
+                    glot.import("../../../site-assets/json/glot-data.json").then(() => {
+                        glot.render();
+                    });
+                    let rootElement = document.documentElement;
+                    lang =(rootElement.lang);
+                    document.cookie = 'lang=' + lang+'; path=/';
+                }else{
+                    glot.render(jsonLang);
+                }
+            }else{
+                glot.import("../../../site-assets/json/glot-data.json").then(() => {
+                    glot.render();
+                });
+                let rootElement = document.documentElement;
+                lang =(rootElement.lang);
+                document.cookie = 'lang=' + lang+'; path=/';
+            }
+        }
+
+        // Glottologistの処理
+
+        //JSONファイルの読み込み
+        document.addEventListener('DOMContentLoaded', function(){
+            // クッキーを読み出す
+            const obj = convertCookieToObject(document.cookie);
+            let jsonLang = obj.lang;
+            glot.import("../../../site-assets/json/glot-data.json").then(() => {
+                glot.render(jsonLang);
+                setLangTextForm()
+            });
+            setLangTextForm()
+        });
+
+        /**
+        言語切り替え用のイベント処理
+        **/
+
+        const ar = document.getElementById('ar');
+        const zh = document.getElementById('zh');
+        const en = document.getElementById('en');
+        const id = document.getElementById('id');
+        const ja = document.getElementById('ja');
+        const ms = document.getElementById('ms');
+        const es = document.getElementById('es');
+
+        ar.addEventListener('click', e => {
+            e.preventDefault()
+            glot.render('ar');
+            langCiikiesSeve()
+        });
+        zh.addEventListener('click', e => {
+            e.preventDefault()
+            glot.render('zh');
+            langCiikiesSeve()
+        });
+        en.addEventListener('click', e => {
+            e.preventDefault()
+            glot.render('en');
+            langCiikiesSeve()
+        });
+        id.addEventListener('click', e => {
+            e.preventDefault()
+            glot.render('id');
+            langCiikiesSeve()
+        });
+        ja.addEventListener('click', e => {
+            e.preventDefault();
+            glot.render('ja');
+            langCiikiesSeve()
+        });
+        ms.addEventListener('click', e => {
+            e.preventDefault()
+            glot.render('ms');
+            langCiikiesSeve()
+        });
+        es.addEventListener('click', e => {
+            e.preventDefault()
+            glot.render('es');
+            langCiikiesSeve()
+        });
+
+        // ID翻訳
+        function setLangTextForm(){
+            let rootElement = document.documentElement;
+            lang =(rootElement.lang);
+            if(lang === "ar"){
+                document.getElementById("site-title").innerHTML = "Under development - SpeingCodeEditor"
+
+                document.getElementById('help_webmanifest').innerHTML = 'A JSON text file that provides information about your web application'
+                document.getElementById('help_webmanifest_name').innerHTML = 'The name of the web application as it normally appears'
+                document.getElementById('help_webmanifest_short_name').innerHTML = 'Displayed to the user when there is not enough space to display the Name'
+                document.getElementById("help_webmanifest_start_url").innerHTML = 'The start_url member is a string representing the starting URL'
+                document.getElementById("help_webmanifest_display").innerHTML = `The display member is a string that determines the developer's preferred display mode for the website`
+                document.getElementById("help_webmanifest_display_override").innerHTML = `The display member is used to determine the developer's preferred display mode for a website`
+                document.getElementById("help_webmanifest_background_color").innerHTML = 'The background_color member defines a placeholder background color for the application page to display before its stylesheet is loaded'
+                document.getElementById("help_webmanifest_description").innerHTML = 'The description member is a string in which developers can explain what the application does'
+                document.getElementById("help_webmanifest_related_applications").innerHTML = 'The related_applications field is an array of objects specifying native applications that are installable by, or accessible to, the underlying platform'
+            }else{
+                if(lang === "zh"){
+                    document.getElementById("site-title").innerHTML = "Under development - SpeingCodeEditor"
+
+                    document.getElementById('help_webmanifest').innerHTML = 'A JSON text file that provides information about your web application'
+                    document.getElementById('help_webmanifest_name').innerHTML = 'The name of the web application as it normally appears'
+                    document.getElementById('help_webmanifest_short_name').innerHTML = 'Displayed to the user when there is not enough space to display the Name'
+                    document.getElementById("help_webmanifest_start_url").innerHTML = 'The start_url member is a string representing the starting URL'
+                    document.getElementById("help_webmanifest_display").innerHTML = `The display member is a string that determines the developer's preferred display mode for the website`
+                    document.getElementById("help_webmanifest_display_override").innerHTML = `The display member is used to determine the developer's preferred display mode for a website`
+                    document.getElementById("help_webmanifest_background_color").innerHTML = 'The background_color member defines a placeholder background color for the application page to display before its stylesheet is loaded'
+                    document.getElementById("help_webmanifest_description").innerHTML = 'The description member is a string in which developers can explain what the application does'
+                    document.getElementById("help_webmanifest_related_applications").innerHTML = 'The related_applications field is an array of objects specifying native applications that are installable by, or accessible to, the underlying platform'
+                }else{
+                    if(lang === "en"){
+                        document.getElementById("site-title").innerHTML = "Under development - SpeingCodeEditor"
+
+                        document.getElementById('help_webmanifest').innerHTML = 'A JSON text file that provides information about your web application'
+                        document.getElementById('help_webmanifest_name').innerHTML = 'The name of the web application as it normally appears'
+                        document.getElementById('help_webmanifest_short_name').innerHTML = 'Displayed to the user when there is not enough space to display the Name'
+                        document.getElementById("help_webmanifest_start_url").innerHTML = 'The start_url member is a string representing the starting URL'
+                        document.getElementById("help_webmanifest_display").innerHTML = `The display member is a string that determines the developer's preferred display mode for the website`
+                        document.getElementById("help_webmanifest_display_override").innerHTML = `The display member is used to determine the developer's preferred display mode for a website`
+                        document.getElementById("help_webmanifest_background_color").innerHTML = 'The background_color member defines a placeholder background color for the application page to display before its stylesheet is loaded'
+                        document.getElementById("help_webmanifest_description").innerHTML = 'The description member is a string in which developers can explain what the application does'
+                        document.getElementById("help_webmanifest_related_applications").innerHTML = 'The related_applications field is an array of objects specifying native applications that are installable by, or accessible to, the underlying platform'
+                    }else{
+                        if(lang === "id"){
+                            document.getElementById("site-title").innerHTML = "Under development - SpeingCodeEditor"
+
+                            document.getElementById('help_webmanifest').innerHTML = 'A JSON text file that provides information about your web application'
+                            document.getElementById('help_webmanifest_name').innerHTML = 'The name of the web application as it normally appears'
+                            document.getElementById('help_webmanifest_short_name').innerHTML = 'Displayed to the user when there is not enough space to display the Name'
+                            document.getElementById("help_webmanifest_start_url").innerHTML = 'The start_url member is a string representing the starting URL'
+                            document.getElementById("help_webmanifest_display").innerHTML = `The display member is a string that determines the developer's preferred display mode for the website`
+                            document.getElementById("help_webmanifest_display_override").innerHTML = `The display member is used to determine the developer's preferred display mode for a website`
+                            document.getElementById("help_webmanifest_background_color").innerHTML = 'The background_color member defines a placeholder background color for the application page to display before its stylesheet is loaded'
+                            document.getElementById("help_webmanifest_description").innerHTML = 'The description member is a string in which developers can explain what the application does'
+                            document.getElementById("help_webmanifest_related_applications").innerHTML = 'The related_applications field is an array of objects specifying native applications that are installable by, or accessible to, the underlying platform'
+                        }else{
+                            if(lang === "ja"){
+                                document.getElementById("site-title").innerHTML = "開発中の - SpeingCodeEditor"
+
+                                document.getElementById('help_webmanifest').innerHTML = 'Web アプリケーションに関する情報を提供する JSON テキスト ファイル'
+                                document.getElementById('help_webmanifest_name').innerHTML = '通常表示される Web アプリケーションの名前'
+                                document.getElementById('help_webmanifest_short_name').innerHTML = '名前を表示するのに十分なスペースがない場合にユーザーに表示されます'
+                                document.getElementById("help_webmanifest_start_url").innerHTML = 'start_url メンバーは開始 URL を表す文字列です'
+                                document.getElementById("help_webmanifest_display").innerHTML = '表示メンバーは、Web サイトの開発者が優先する表示モードを決定する文字列です'
+                                document.getElementById("help_webmanifest_display_override").innerHTML = '表示メンバーは、開発者が Web サイトに優先する表示モードを決定するために使用されます'
+                                document.getElementById("help_webmanifest_background_color").innerHTML = 'Background_color メンバーは、スタイルシートがロードされる前にアプリケーション ページが表示されるプレースホルダーの背景色を定義します'
+                                document.getElementById("help_webmanifest_description").innerHTML = 'description メンバーは、開発者がアプリケーションの動作を説明できる文字列です'
+                                document.getElementById("help_webmanifest_related_applications").innerHTML = '関連アプリケーション フィールドは、基礎となるプラットフォームによってインストール可能またはアクセス可能なネイティブ アプリケーションを指定するオブジェクトの配列です'
+                            }else{
+                                if(lang === "ms"){
+                                    document.getElementById("site-title").innerHTML = "Under development - SpeingCodeEditor"
+
+                                    document.getElementById('help_webmanifest').innerHTML = 'A JSON text file that provides information about your web application'
+                                    document.getElementById('help_webmanifest_name').innerHTML = 'The name of the web application as it normally appears'
+                                    document.getElementById('help_webmanifest_short_name').innerHTML = 'Displayed to the user when there is not enough space to display the Name'
+                                    document.getElementById("help_webmanifest_start_url").innerHTML = 'The start_url member is a string representing the starting URL'
+                                    document.getElementById("help_webmanifest_display").innerHTML = `The display member is a string that determines the developer's preferred display mode for the website`
+                                    document.getElementById("help_webmanifest_display_override").innerHTML = `The display member is used to determine the developer's preferred display mode for a website`
+                                    document.getElementById("help_webmanifest_background_color").innerHTML = 'The background_color member defines a placeholder background color for the application page to display before its stylesheet is loaded'
+                                    document.getElementById("help_webmanifest_description").innerHTML = 'The description member is a string in which developers can explain what the application does'
+                                    document.getElementById("help_webmanifest_related_applications").innerHTML = 'The related_applications field is an array of objects specifying native applications that are installable by, or accessible to, the underlying platform'
+                                }else{
+                                    if(lang === "es"){
+                                        document.getElementById("site-title").innerHTML = "Under development - SpeingCodeEditor"
+
+                                        document.getElementById('help_webmanifest').innerHTML = 'A JSON text file that provides information about your web application'
+                                        document.getElementById('help_webmanifest_name').innerHTML = 'The name of the web application as it normally appears'
+                                        document.getElementById('help_webmanifest_short_name').innerHTML = 'Displayed to the user when there is not enough space to display the Name'
+                                        document.getElementById("help_webmanifest_start_url").innerHTML = 'The start_url member is a string representing the starting URL'
+                                        document.getElementById("help_webmanifest_display").innerHTML = `The display member is a string that determines the developer's preferred display mode for the website`
+                                        document.getElementById("help_webmanifest_display_override").innerHTML = `The display member is used to determine the developer's preferred display mode for a website`
+                                        document.getElementById("help_webmanifest_background_color").innerHTML = 'The background_color member defines a placeholder background color for the application page to display before its stylesheet is loaded'
+                                        document.getElementById("help_webmanifest_description").innerHTML = 'The description member is a string in which developers can explain what the application does'
+                                        document.getElementById("help_webmanifest_related_applications").innerHTML = 'The related_applications field is an array of objects specifying native applications that are installable by, or accessible to, the underlying platform'
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // 言語変更検知
+        function langCiikiesSeve(){
+            if(navigator.cookieEnabled){ // クッキーがクッキーが使えるか確認
+                let rootElement = document.documentElement;
+                lang =(rootElement.lang);
+                document.cookie = 'lang=' + lang+'; path=/';
+                // クッキーを読み出す
+                const obj = convertCookieToObject(document.cookie);
+            }
+            setLangTextForm()
+        }
+        //document.cookie = 'lang=; max-age=0'; // クッキーの削除
+
+
+        // クッキーの解析
+        function convertCookieToObject(cookies) {
+            const cookieItem = cookies.split(';');
+            const obj = {};
+            cookieItem.forEach((item) => {
+                // 「=」で分解
+                const element = item.split('=');
+                // キーを取得
+                const key = element[0].trim();
+                // バリューを取得
+                const value = decodeURIComponent(element[1]);
+                // 保存
+                obj[key] = value;
+            });
+            return obj;
+        }
+    </script>
+</html>
