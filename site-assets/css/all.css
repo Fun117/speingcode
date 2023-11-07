@@ -511,7 +511,7 @@ canvas.preview-details.visible {
     position: fixed;
     display: flex;
     flex-direction: column;
-    height: calc(100% - 56px);
+    height: calc(100% - 64px);
     width: 200px;
     width: max(200px,20vw);
     right: 100%;

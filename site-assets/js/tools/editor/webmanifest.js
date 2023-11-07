@@ -1,3 +1,38 @@
+function copyToClipboard(text){
+    // テキストコピー用の一時要素を作成
+    const pre = document.createElement('pre');
+
+    // テキストを選択可能にしてテキストセット
+    pre.style.webkitUserSelect = 'auto';
+    pre.style.userSelect = 'auto';
+    pre.textContent = text;
+
+    // 要素を追加、選択してクリップボードにコピー
+    document.body.appendChild(pre);
+    document.getSelection().selectAllChildren(pre);
+    const result = document.execCommand('copy');
+
+    // 要素を削除
+    document.body.removeChild(pre);
+
+    return result;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 let manifest_display_override_box_count = 0;
 let edit_manifest_display_override_box_cnt = 0;
 function displayDataAaaCnt(dataCount){
@@ -21,7 +56,7 @@ function displayDataAaaCnt(dataCount){
                 document.getElementById(`manifest_display_override_box_` + manifest_display_override_box_count ).innerHTML = (`
                     <div class="node-header">
                         <label glot-model="Mode">Mode</label>
-                        <select>
+                        <select id="display_override_data_` + manifest_display_override_box_count + `">
                             <option value="fullscreen" glot-model="fullscreen">fullscreen</option>
                             <option value="standalone" glot-model="standalone">standalone</option>
                             <option value="minimal-ui" glot-model="minimal-ui">minimal-ui</option>
@@ -43,7 +78,7 @@ function displayDataAaaCnt(dataCount){
                         <div class="node string-node" id="manifest_display_override_box_` + manifest_display_override_box_count + `">
                             <div class="node-header">
                                 <label glot-model="Mode">Mode</label>
-                                <select>
+                                <select id="display_override_data_` + manifest_display_override_box_count + `">
                                     <option value="fullscreen" glot-model="fullscreen">fullscreen</option>
                                     <option value="standalone" glot-model="standalone">standalone</option>
                                     <option value="minimal-ui" glot-model="minimal-ui">minimal-ui</option>
@@ -62,7 +97,7 @@ function displayDataAaaCnt(dataCount){
                         document.getElementById(`manifest_display_override_box_` + edit_manifest_display_override_box_cnt ).innerHTML = (`
                                 <div class="node-header">
                                     <label glot-model="Mode">Mode</label>
-                                    <select>
+                                    <select id="display_override_data_` + edit_manifest_display_override_box_cnt + `">
                                         <option value="fullscreen" glot-model="fullscreen">fullscreen</option>
                                         <option value="standalone" glot-model="standalone">standalone</option>
                                         <option value="minimal-ui" glot-model="minimal-ui">minimal-ui</option>
@@ -88,6 +123,34 @@ function displayDataAaaCnt(dataCount){
         document.getElementById('manifest_display_override').innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zm.75 4.75a.75.75 0 00-1.5 0v2.5h-2.5a.75.75 0 000 1.5h2.5v2.5a.75.75 0 001.5 0v-2.5h2.5a.75.75 0 000-1.5h-2.5v-2.5z"></path></svg>`;
     }
 };
+
+
+window.setInterval(manifest_display_override_box_count_check, 100);
+
+var display_override_data_list_export;
+function manifest_display_override_box_count_check(){
+    const manifest_display_override_box_count_val = manifest_display_override_box_count + 1;
+    if(manifest_display_override_box_count_val > 1){
+        var display_override_data_list = "";
+        for(let i = 1; i < manifest_display_override_box_count_val; i++){
+            if(i === 1){
+                display_override_data_list = display_override_data_list + '"' + document.getElementById('display_override_data_' + i).value + '"';
+            }else{
+                display_override_data_list = display_override_data_list + ',"' + document.getElementById('display_override_data_' + i).value + '"';
+            };
+        };
+        display_override_data_list = '[' + display_override_data_list + ']';
+        document.getElementById('code_display_override').innerHTML = (display_override_data_list);
+    }else{
+        document.getElementById('code_display_override').innerHTML = ('""');
+    };
+    display_override_data_list_export = display_override_data_list;
+};
+
+
+
+// =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= //
+
 
 
 
@@ -126,7 +189,7 @@ function related_applications_Cnt(dataCount){
                         <div class="node string-node">
                             <div class="node-header">
                                 <label>platform</label>
-                                <select>
+                                <select id="related_applications_data_platform_` + related_applications_box_count + `">
                                     <option value="chrome_web_store">chrome_web_store</option>
                                     <option value="play">play</option>
                                     <option value="chromeos_play">chromeos_play</option>
@@ -140,16 +203,13 @@ function related_applications_Cnt(dataCount){
                         <div class="node string-node">
                             <div class="node-header">
                                 <label>url</label>
-                                <input type="url">
+                                <input type="url" id="related_applications_data_url_` + related_applications_box_count + `">
                             </div>
                         </div>
                         <div class="node string-node">
                             <div class="node-header">
                                 <label>id</label>
-                                <input list="related_applications_box_` + related_applications_box_count + `">
-                                <datalist id="related_applications_box_` + related_applications_box_count + `">
-                                    <option>null</option>
-                                </datalist>
+                                <input type="text" id="related_applications_data_id_` + related_applications_box_count + `">
                             </div>
                         </div>
                     </div>
@@ -172,7 +232,7 @@ function related_applications_Cnt(dataCount){
                                 <div class="node string-node">
                                     <div class="node-header">
                                         <label>platform</label>
-                                        <select>
+                                        <select id="related_applications_data_platform_` + related_applications_box_count + `">
                                             <option value="chrome_web_store">chrome_web_store</option>
                                             <option value="play">play</option>
                                             <option value="chromeos_play">chromeos_play</option>
@@ -186,16 +246,13 @@ function related_applications_Cnt(dataCount){
                                 <div class="node string-node">
                                     <div class="node-header">
                                         <label>url</label>
-                                        <input type="url">
+                                        <input type="url" id="related_applications_data_url_` + related_applications_box_count + `">
                                     </div>
                                 </div>
                                 <div class="node string-node">
                                     <div class="node-header">
                                         <label>id</label>
-                                        <input list="related_applications_box_` + related_applications_box_count + `">
-                                        <datalist id="related_applications_box_` + related_applications_box_count + `">
-                                            <option>null</option>
-                                        </datalist>
+                                        <input type="text" id="related_applications_data_id_` + related_applications_box_count + `">
                                     </div>
                                 </div>
                             </div>
@@ -213,7 +270,7 @@ function related_applications_Cnt(dataCount){
                                     <div class="node string-node">
                                         <div class="node-header">
                                             <label>platform</label>
-                                            <select>
+                                            <select id="related_applications_data_platform_` + edit_related_applications_box_cnt + `">
                                                 <option value="chrome_web_store">chrome_web_store</option>
                                                 <option value="play">play</option>
                                                 <option value="chromeos_play">chromeos_play</option>
@@ -227,16 +284,13 @@ function related_applications_Cnt(dataCount){
                                     <div class="node string-node">
                                         <div class="node-header">
                                             <label>url</label>
-                                            <input type="url">
+                                            <input type="url" id="related_applications_data_url_` + edit_related_applications_box_cnt + `">
                                         </div>
                                     </div>
                                     <div class="node string-node">
                                         <div class="node-header">
                                             <label>id</label>
-                                            <input list="related_applications_box_` + edit_related_applications_box_cnt + `">
-                                            <datalist id="related_applications_box_` + edit_related_applications_box_cnt + `">
-                                                <option>null</option>
-                                            </datalist>
+                                            <input type="text" id="related_applications_data_id_` + edit_related_applications_box_cnt + `">
                                         </div>
                                     </div>
                                 </div>
@@ -258,4 +312,93 @@ function related_applications_Cnt(dataCount){
         document.getElementById('related_applications').classList.remove('open');
         document.getElementById('related_applications').innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zm.75 4.75a.75.75 0 00-1.5 0v2.5h-2.5a.75.75 0 000 1.5h2.5v2.5a.75.75 0 001.5 0v-2.5h2.5a.75.75 0 000-1.5h-2.5v-2.5z"></path></svg>`;
     }
+};
+
+
+window.setInterval(manifest_related_applications_box_count_check, 100);
+
+var related_applications_data_list_export;
+function manifest_related_applications_box_count_check(){
+    const manifest_related_applications_box_count_val = related_applications_box_count + 1;
+    if(manifest_related_applications_box_count_val > 1){
+        var related_applications_data_list = "";
+        for(let i = 1; i < manifest_related_applications_box_count_val; i++){
+            if(i === 1){
+                related_applications_data_list = related_applications_data_list + '{"platform":"' + document.getElementById('related_applications_data_platform_' + i).value + '","url":"' + document.getElementById('related_applications_data_url_' + i).value + '","id":"' + document.getElementById('related_applications_data_id_' + i).value + '"}';
+            }else{
+                related_applications_data_list = related_applications_data_list + ',{"platform":"' + document.getElementById('related_applications_data_platform_' + i).value + '","url":"' + document.getElementById('related_applications_data_url_' + i).value + '","id":"' + document.getElementById('related_applications_data_id_' + i).value + '"}';
+            };
+        };
+        related_applications_data_list = '[' + related_applications_data_list + ']';
+        document.getElementById('code_related_applications').innerHTML = (related_applications_data_list);
+    }else{
+        document.getElementById('code_related_applications').innerHTML = ('""');
+    };
+    related_applications_data_list_export = related_applications_data_list;
+};
+
+
+
+
+window.setInterval(DOIWA, 100);
+
+var code_view_data;
+function DOIWA(){
+    if(display_override_data_list_export === undefined){
+        if(related_applications_data_list_export === undefined){
+            code_view_data = (
+                '{\n' + '  "name":"' + document.getElementById('codeData_name').value + '",\n' + '  "short_name":"' + document.getElementById('codeData_short_name').value + '",\n' + '  "start_url":"' + document.getElementById('codeData_start_url').value + '",\n' + '  "display_override":"' + '",\n' + '  "display":"' + '",\n' + '  "background_color":"' + document.getElementById('codeData_background_color').value + '",\n' + '  "description":"' + document.getElementById('codeData_description').value.replace(/\r?\n/g,"") + '",\n' + '  "related_application":""\n}'
+            );
+        }else{
+            code_view_data = (
+                '{\n' + '  "name":"' + document.getElementById('codeData_name').value + '",\n' + '  "short_name":"' + document.getElementById('codeData_short_name').value + '",\n' + '  "start_url":"' + document.getElementById('codeData_start_url').value + '",\n' + '  "display_override":"' + '",\n' + '  "display":"' + '",\n' + '  "background_color":"' + document.getElementById('codeData_background_color').value + '",\n' + '  "description":"' + document.getElementById('codeData_description').value.replace(/\r?\n/g,"") + '",\n' + '  "related_application":' + related_applications_data_list_export + '\n}'
+            );
+        };
+    }else{
+        if(related_applications_data_list_export === undefined){
+            code_view_data = (
+                '{\n' + '  "name":"' + document.getElementById('codeData_name').value + '",\n' + '  "short_name":"' + document.getElementById('codeData_short_name').value + '",\n' + '  "start_url":"' + document.getElementById('codeData_start_url').value + '",\n' + '  "display_override":' + display_override_data_list_export + ',\n' + '  "display":"' + document.getElementById('codeData_display').value + '",\n' + '  "background_color":"' + document.getElementById('codeData_background_color').value + '",\n' + '  "description":"' + document.getElementById('codeData_description').value.replace(/\r?\n/g,"") + '",\n' + '  "related_application":""\n}'
+            );
+        }else{
+            code_view_data = (
+                '{\n' + '  "name":"' + document.getElementById('codeData_name').value + '",\n' + '  "short_name":"' + document.getElementById('codeData_short_name').value + '",\n' + '  "start_url":"' + document.getElementById('codeData_start_url').value + '",\n' + '  "display_override":' + display_override_data_list_export + ',\n' + '  "display":"' + document.getElementById('codeData_display').value + '",\n' + '  "background_color":"' + document.getElementById('codeData_background_color').value + '",\n' + '  "description":"' + document.getElementById('codeData_description').value.replace(/\r?\n/g,"") + '",\n' + '  "related_application":' + related_applications_data_list_export + '\n}'
+            );
+        };
+    };
+};
+
+function code_view_copy() {
+    copyToClipboard(code_view_data);
+    document.getElementById('actionCopy').ariaLabel = "Copied!";
+    document.getElementById('actionCopy').classList.add("active");
+    document.getElementById('actionCopySvg').innerHTML = (`<path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>`);
+
+    setTimeout(() =>{
+        document.getElementById('actionCopy').ariaLabel = "Copy";
+        document.getElementById('actionCopy').classList.remove("active");
+        document.getElementById('actionCopySvg').innerHTML = (`<path fill-rule="evenodd" d="M5.75 1a.75.75 0 00-.75.75v3c0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75v-3a.75.75 0 00-.75-.75h-4.5zm.75 3V2.5h3V4h-3zm-2.874-.467a.75.75 0 00-.752-1.298A1.75 1.75 0 002 3.75v9.5c0 .966.784 1.75 1.75 1.75h8.5A1.75 1.75 0 0014 13.25v-9.5a1.75 1.75 0 00-.874-1.515.75.75 0 10-.752 1.298.25.25 0 01.126.217v9.5a.25.25 0 01-.25.25h-8.5a.25.25 0 01-.25-.25v-9.5a.25.25 0 01.126-.217z"></path>`);    
+    },2500);
+};
+
+// MIME Type List : https://developer.mozilla.org/ja/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types
+function download_file(file_name, data) {
+    const blob = new Blob([data], {type: "application/json"});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    document.body.appendChild(a);
+    a.download = file_name;
+    a.href = url;
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
+};
+
+function editor_code_download() {
+    var dt = new Date();
+    var dy = dt.toLocaleString();
+    var du = dy.replace(/\s+/g,"");
+    var du = du.replace(/:/g,'');
+    var du = du.replace(/(\\|\/)/g,'');
+    var file_name_d = ('webmanifest');
+    download_file(file_name_d,　code_view_data);
 };

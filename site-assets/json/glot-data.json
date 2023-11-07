@@ -146,6 +146,35 @@
     },
 
 
+    "Framework":{
+        "ar":"Framework",
+        "zh":"Framework",
+        "en":"Framework",
+        "id":"Framework",
+        "ja":"フレームワーク",
+        "ms":"Framework",
+        "es":"Framework"
+    },
+    "Pre-Alpha":{
+        "ar":"Pre-Alpha",
+        "zh":"Pre-Alpha",
+        "en":"Pre-Alpha",
+        "id":"Pre-Alpha",
+        "ja":"プレアルファ版",
+        "ms":"Pre-Alpha",
+        "es":"Pre-Alpha"
+    },
+    "Pre-Alpha_version":{
+        "ar":"Pre-Alpha version",
+        "zh":"Pre-Alpha version",
+        "en":"Pre-Alpha version",
+        "id":"Pre-Alpha version",
+        "ja":"プレアルファ版",
+        "ms":"Pre-Alpha version",
+        "es":"Pre-Alpha version"
+    },
+
+
 
 
 
