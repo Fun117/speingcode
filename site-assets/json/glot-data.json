@@ -422,5 +422,14 @@
         "ja":"関連アプリケーション",
         "ms":"related_applications",
         "es":"related_applications"
+    },
+    "icons":{
+        "ar":"icons",
+        "zh":"icons",
+        "en":"icons",
+        "id":"icons",
+        "ja":"アイコン",
+        "ms":"icons",
+        "es":"icons"
     }
 }
