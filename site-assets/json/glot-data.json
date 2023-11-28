@@ -354,7 +354,7 @@
         "zh":"standalone",
         "en":"standalone",
         "id":"standalone",
-        "ja":"全画面表示",
+        "ja":"スタンドアロン",
         "ms":"standalone",
         "es":"standalone"
     },
@@ -401,7 +401,7 @@
         "zh":"background_color",
         "en":"background_color",
         "id":"background_color",
-        "ja":"スタンドアロン",
+        "ja":"背景色",
         "ms":"background_color",
         "es":"background_color"
     },
